@@ -3,7 +3,7 @@ export const videoConfig = {
   width: 1920,
   height: 1080,
   fps: 30,
-  durationInFrames: 720,
+  durationInFrames: 650,
 };
 
 export const dataConfig = {
