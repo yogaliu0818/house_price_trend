@@ -27,9 +27,16 @@ export const TaiwanHousingDashboard = ({records = []}: DashboardProps) => {
   const currentYear = years[toIndex] ?? years[0] ?? 0;
   const currentRecords = getInterpolatedRecords(records, years[fromIndex] ?? currentYear, currentYear, progress);
   const {min, max} = getGlobalRange(records);
-  const highlightIndex =
+  const finalYearIndex = Math.max(0, years.length - 1);
+  const finalYearStableStart = timelineConfig.yearStart + timelineConfig.yearDuration * finalYearIndex;
+  const loopingHighlightIndex =
     Math.floor(Math.max(0, frame - timelineConfig.highlightStart) / timelineConfig.highlightDuration) %
     countyOrder.length;
+  const finalYearHighlightIndex = Math.min(
+    countyOrder.length - 1,
+    Math.floor(Math.max(0, frame - finalYearStableStart) / timelineConfig.highlightDuration),
+  );
+  const highlightIndex = toIndex === finalYearIndex ? finalYearHighlightIndex : loopingHighlightIndex;
   const highlightedCountyId = countyOrder[highlightIndex] as CountyId;
   const highlightedRecord = currentRecords.find((record) => record.countyId === highlightedCountyId);
   const rank =
