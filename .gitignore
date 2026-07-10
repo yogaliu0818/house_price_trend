@@ -1,0 +1,6 @@
+.agents/
+.git-old-empty/
+node_modules/
+out/
+dist/
+.DS_Store

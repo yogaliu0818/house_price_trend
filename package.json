@@ -1,0 +1,27 @@
+{
+  "name": "taiwan-housing-heatmap-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Professional Remotion video dashboard for Taiwan housing-price heatmaps.",
+  "scripts": {
+    "dev": "remotion studio",
+    "dev:site": "vite --host 0.0.0.0",
+    "build:site": "vite build",
+    "studio": "remotion studio",
+    "render": "remotion render TaiwanHousingDashboard out/taiwan-housing-dashboard.mp4",
+    "still": "remotion still TaiwanHousingDashboard --frame=180 --scale=0.5 out/preview.png"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.344",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.344"
+  },
+  "devDependencies": {
+    "@remotion/player": "^4.0.487",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.8.0",
+    "vite": "^8.1.4"
+  }
+}
